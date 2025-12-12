@@ -1,0 +1,9 @@
+[build]
+  base = "rk car rental claude"
+  publish = "rk car rental claude"
+  command = "echo 'No build step'"
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
