@@ -6,6 +6,7 @@
       "model": "2026",
       "price": 4000,
       "priceFormatted": "₹4,000",
+      "kmAllowance": 350,
       "seats": 5,
       "fuel": "Diesel",
       "transmission": "Manual",
@@ -24,11 +25,12 @@
       "model": "2025",
       "price": 4000,
       "priceFormatted": "₹4,000",
+      "kmAllowance": 350,
       "seats": 7,
       "fuel": "Petrol",
       "transmission": "Automatic",
-      "category": ["family", "mpv"],
-      "badge": null,
+      "category": ["family", "mpv", "7-seater"],
+      "badge": "Family Pick",
       "caption": "Your family's co-pilot for Coorg, Mysore, and beyond.",
       "img": {
         "card": "images/cars/Ertiga.webp",
@@ -42,6 +44,7 @@
       "model": "2025",
       "price": 3500,
       "priceFormatted": "₹3,500",
+      "kmAllowance": 350,
       "seats": 5,
       "fuel": "Petrol",
       "transmission": "Automatic",
@@ -60,6 +63,7 @@
       "model": "2025",
       "price": 3000,
       "priceFormatted": "₹3,000",
+      "kmAllowance": 350,
       "seats": 5,
       "fuel": "Petrol",
       "transmission": "Automatic",
@@ -78,11 +82,12 @@
       "model": "2025",
       "price": 3000,
       "priceFormatted": "₹3,000",
+      "kmAllowance": 350,
       "seats": 5,
       "fuel": "Petrol",
       "transmission": "Manual/Auto",
       "category": ["hatchback", "city"],
-      "badge": null,
+      "badge": "Best Value",
       "caption": "Zippy. Reliable. India's favorite hatchback, now yours to rent.",
       "img": {
         "card": "images/cars/swift.webp",
@@ -91,47 +96,31 @@
       "whatsappMsg": "I'm interested in booking the Maruti Swift 2025"
     },
     {
-      "id": "hexa-2024",
-      "name": "Tata Hexa",
-      "model": "2018",
-      "price": 4000,
-      "priceFormatted": "₹4,000",
-      "seats": 7,
-      "fuel": "Diesel",
-      "transmission": "Manual",
-      "category": ["suv", "family"],
-      "badge": null,
-      "caption": "The workhorse. 7 seats, diesel power, ready for any terrain.",
-      "img": {
-        "card": "images/cars/Hexa.webp",
-        "alt": "Tata Hexa 2024 - 7 seat premium SUV"
-      },
-      "whatsappMsg": "I'm interested in booking the Tata Hexa 2024"
-    },
-    {
-      "id": "tiago-2024",
+      "id": "tiago-2018",
       "name": "Tata Tiago",
       "model": "2018",
-      "price": 2000,
-      "priceFormatted": "₹2,000",
+      "price": 3000,
+      "priceFormatted": "₹3,000",
+      "kmAllowance": 350,
       "seats": 5,
-      "fuel": "Petrol",
+      "fuel": "Petrol + CNG",
       "transmission": "Manual",
       "category": ["hatchback", "budget"],
-      "badge": "Value",
-      "caption": "Budget-friendly doesn't mean boring. Safe, peppy, and practical.",
+      "badge": "Dual Fuel",
+      "caption": "Budget-friendly, safe, and economical with dual fuel flexibility.",
       "img": {
         "card": "images/cars/Tiago.webp",
-        "alt": "Tata Tiago 2024 - 5 seat hatchback"
+        "alt": "Tata Tiago 2018 - 5 seat hatchback Petrol + CNG"
       },
-      "whatsappMsg": "I'm interested in booking the Tata Tiago 2024"
+      "whatsappMsg": "I'm interested in booking the Tata Tiago 2018"
     },
     {
-      "id": "kwid-2024",
+      "id": "kwid-2020",
       "name": "Renault Kwid",
       "model": "2020",
       "price": 2500,
       "priceFormatted": "₹2,500",
+      "kmAllowance": 350,
       "seats": 5,
       "fuel": "Petrol",
       "transmission": "Manual",
@@ -140,9 +129,66 @@
       "caption": "The most affordable wheels in town. Perfect for short city trips.",
       "img": {
         "card": "images/cars/Renault kwid.webp",
-        "alt": "Renault Kwid 2024 - 5 seat compact hatchback"
+        "alt": "Renault Kwid 2020 - 5 seat compact hatchback"
       },
-      "whatsappMsg": "I'm interested in booking the Renault Kwid 2024"
+      "whatsappMsg": "I'm interested in booking the Renault Kwid 2020"
+    },
+    {
+      "id": "venue-2024",
+      "name": "Hyundai Venue",
+      "model": "2024",
+      "price": 4000,
+      "priceFormatted": "₹4,000",
+      "kmAllowance": 350,
+      "seats": 5,
+      "fuel": "Petrol",
+      "transmission": "Manual",
+      "category": ["suv", "compact"],
+      "badge": "Sunroof",
+      "caption": "Premium compact SUV with electric sunroof for memorable weekend getaways.",
+      "img": {
+        "card": "images/cars/venue.webp",
+        "alt": "Hyundai Venue 2024 — Sunroof 5 seat compact SUV"
+      },
+      "whatsappMsg": "I'm interested in booking the Hyundai Venue 2024 — Sunroof"
+    },
+    {
+      "id": "ertiga-2024",
+      "name": "Maruti Suzuki Ertiga",
+      "model": "2024",
+      "price": 4500,
+      "priceFormatted": "₹4,500",
+      "kmAllowance": 350,
+      "seats": 7,
+      "fuel": "Petrol",
+      "transmission": "Manual",
+      "category": ["family", "mpv", "7-seater"],
+      "badge": "Spacious 7-Seater",
+      "caption": "Spacious 7-seater MPV built for large families and comfortable group travel.",
+      "img": {
+        "card": "images/cars/Ertiga.webp",
+        "alt": "Maruti Suzuki Ertiga 2024 - 7 seat family MPV"
+      },
+      "whatsappMsg": "I'm interested in booking the Maruti Suzuki Ertiga 2024"
+    },
+    {
+      "id": "xl6-2026",
+      "name": "Maruti Suzuki XL6",
+      "model": "2026",
+      "price": 4500,
+      "priceFormatted": "₹4,500",
+      "kmAllowance": 350,
+      "seats": 6,
+      "fuel": "Petrol",
+      "transmission": "Automatic",
+      "category": ["family", "mpv", "7-seater"],
+      "badge": "New 2026",
+      "caption": "Next-generation premium 6-seater MPV with plush captain seats and effortless drive.",
+      "img": {
+        "card": "images/cars/xl6.webp",
+        "alt": "Maruti Suzuki XL6 2026 - 6 seat premium MPV"
+      },
+      "whatsappMsg": "I'm interested in booking the Maruti Suzuki XL6 2026"
     }
   ],
   "categories": [
@@ -152,7 +198,12 @@
     { "id": "family", "label": "Family Cars" },
     { "id": "budget", "label": "Budget Picks" }
   ],
+  "policy": {
+    "dailyKmAllowance": 350,
+    "kmDescription": "350 km per day included",
+    "deposit": "No deposit for verified users",
+    "speedLimit": "100 km/h"
+  },
   "whatsappNumber": "918660017739",
   "whatsappBaseUrl": "https://wa.me/918660017739"
 }
-
