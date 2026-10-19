@@ -1553,10 +1553,76 @@
       }
     }
 
+    /* Car Image Loading & Skeleton Animation */
+    .car-img-wrapper {
+      position: relative;
+      width: 100%;
+      background: #f1f5f9;
+      overflow: hidden;
+    }
+
+    .car-skeleton-loader {
+      position: absolute;
+      inset: 0;
+      z-index: 10;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(110deg, #f1f5f9 20%, #e2e8f0 40%, #ffffff 50%, #e2e8f0 60%, #f1f5f9 80%);
+      background-size: 250% 100%;
+      animation: skeletonPulse 1.6s ease-in-out infinite;
+      transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.6s ease;
+    }
+
+    .car-skeleton-loader.is-loaded {
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+    }
+
+    @keyframes skeletonPulse {
+      0% { background-position: 250% 0; }
+      100% { background-position: -250% 0; }
+    }
+
+    .car-skeleton-spinner {
+      width: 32px;
+      height: 32px;
+      border: 3px solid rgba(14, 165, 233, 0.2);
+      border-top-color: #0ea5e9;
+      border-radius: 50%;
+      animation: carSpin 0.9s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+    }
+
+    @keyframes carSpin {
+      to { transform: rotate(360deg); }
+    }
+
+    .car-card-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0;
+      transform: scale(1.05);
+      filter: blur(4px);
+      transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), transform 0.7s cubic-bezier(0.16, 1, 0.3, 1), filter 0.6s ease;
+      will-change: opacity, transform, filter;
+    }
+
+    .car-card-img.img-loaded {
+      opacity: 1;
+      transform: scale(1);
+      filter: blur(0);
+    }
+
     @media (prefers-reduced-motion: reduce) {
       .reveal-element,
       .btn-glow::after,
-      .hero-parallax {
+      .hero-parallax,
+      .car-skeleton-loader,
+      .car-skeleton-spinner,
+      .car-card-img {
         transition: none !important;
         animation: none !important;
       }
@@ -1564,7 +1630,7 @@
 
   </style>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"RK Brothers Cars Rental","url":"https://www.rkbrotherscarsrental.site/","potentialAction":{"@type":"SearchAction","target":"https://www.rkbrotherscarsrental.site/fleet?search={search_term_string}","query-input":"required name=search_term_string"}}</script>
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":["LocalBusiness","CarRental"],"name":"RK Brothers Cars Rental","image":"https://www.rkbrotherscarsrental.site/images/hero/hero-thar-desktop.jpg","@id":"https://www.rkbrotherscarsrental.site/#rkbrothers","url":"https://www.rkbrotherscarsrental.site/","telephone":"+918660017739","address":{"@type":"PostalAddress","streetAddress":"NGV 6th Cross Rd, National Games Village","addressLocality":"Bengaluru","addressRegion":"Karnataka","postalCode":"560047","addressCountry":"IN"},"geo":{"@type":"GeoCoordinates","latitude":12.945973,"longitude":77.613788},"openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],"opens":"00:00","closes":"23:59"}],"areaServed":{"@type":"AdministrativeArea","name":"Koramangala, Bengaluru"}}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":["LocalBusiness","CarRental"],"name":"RK Brothers Cars Rental","image":"https://www.rkbrotherscarsrental.site/images/hero/hero-suv.jpg","@id":"https://www.rkbrotherscarsrental.site/#rkbrothers","url":"https://www.rkbrotherscarsrental.site/","telephone":"+918660017739","address":{"@type":"PostalAddress","streetAddress":"NGV 6th Cross Rd, National Games Village","addressLocality":"Bengaluru","addressRegion":"Karnataka","postalCode":"560047","addressCountry":"IN"},"geo":{"@type":"GeoCoordinates","latitude":12.945973,"longitude":77.613788},"openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],"opens":"00:00","closes":"23:59"}],"areaServed":{"@type":"AdministrativeArea","name":"Koramangala, Bengaluru"}}</script>
   <!-- ------------ Social Preview Meta (Windsurf HTML) ------------ -->
 <title>RK Brothers Cars Rental</title>
 <meta name="description" content="Affordable, trusted, and fast car rental service across Bengaluru." />
@@ -1595,7 +1661,7 @@
     <div class="max-w-7xl mx-auto px-4 md:px-6 lg:px-12">
       <div class="flex items-center justify-between h-14">
         <a href="index.html" class="flex items-center gap-2">
-          <img src="https://raw.githubusercontent.com/nbkbusinesssolutions/rkbrothers-assets/e233631ca892825d069623c2790b5ff19e63b125/Rk%20Brothers%20Cars%20Rental%20Logo.jpg" alt="RK Brothers Cars Rental logo" class="h-9 w-auto rounded-lg">
+          <img src="https://raw.githubusercontent.com/nbkbusinesssolutions/rkbrothers-assets/e233631ca892825d069623c2790b5ff19e63b125/Rk%20Brothers%20Cars%20Rental%20Logo.jpg" alt="RK Brothers Cars Rental logo" class="h-9 w-auto rounded-lg" onerror="this.onerror=null;this.src='images/logo.jpg'">
           <span class="font-display text-lg font-bold text-gray-900 hidden sm:block">RK Brothers</span>
         </a>
         <nav class="hidden md:flex items-center gap-8">
@@ -1812,9 +1878,20 @@
 
       <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
         <div class="card-base group overflow-hidden reveal-element" data-animate="left" data-animate-delay="1">
-          <div class="relative rounded-xl overflow-hidden border border-slate-200">
-            <img src="images/cars/Fronx.webp" alt="Maruti Fronx 2025 - popular self-drive SUV in Koramangala" class="w-full aspect-[4/3] object-cover group-hover:scale-[1.03] transition-transform duration-300" loading="lazy" decoding="async" onerror="this.src='images/placeholder.svg'">
-            <span class="absolute top-3 left-3 bg-sky-500 text-white text-xs font-bold px-3 py-1.5 rounded-full shadow-lg">Popular</span>
+          <div class="car-img-wrapper relative rounded-xl overflow-hidden border border-slate-200 aspect-[4/3]">
+            <div class="car-skeleton-loader" id="loader-pop-1">
+              <div class="car-skeleton-spinner mb-2"></div>
+              <span class="text-[10px] font-bold text-slate-500 uppercase tracking-widest">Loading...</span>
+            </div>
+            <img src="images/cars/Fronx.webp" 
+                 alt="Maruti Fronx 2025 - popular self-drive SUV in Koramangala" 
+                 class="car-card-img" 
+                 id="img-pop-1" 
+                 loading="lazy" 
+                 decoding="async" 
+                 onload="this.classList.add('img-loaded'); document.getElementById('loader-pop-1')?.classList.add('is-loaded');" 
+                 onerror="this.onerror=null;this.src='images/placeholder.svg';this.classList.add('img-loaded');document.getElementById('loader-pop-1')?.classList.add('is-loaded');">
+            <span class="absolute top-3 left-3 bg-sky-500 text-white text-xs font-bold px-3 py-1.5 rounded-full shadow-lg z-20">Popular</span>
           </div>
           <div class="mt-4">
             <div class="flex items-start justify-between gap-3">
@@ -1835,9 +1912,20 @@
         </div>
 
         <div class="card-base group overflow-hidden reveal-element" data-animate="left" data-animate-delay="2">
-          <div class="relative rounded-xl overflow-hidden border border-slate-200">
-            <img src="images/cars/thar.webp" alt="Mahindra Thar 2026 - popular self-drive SUV in Koramangala" class="w-full aspect-[4/3] object-cover group-hover:scale-[1.03] transition-transform duration-300" loading="lazy" decoding="async" onerror="this.src='images/placeholder.svg'">
-            <span class="absolute top-3 left-3 bg-sky-500 text-white text-xs font-bold px-3 py-1.5 rounded-full shadow-lg">Popular</span>
+          <div class="car-img-wrapper relative rounded-xl overflow-hidden border border-slate-200 aspect-[4/3]">
+            <div class="car-skeleton-loader" id="loader-pop-2">
+              <div class="car-skeleton-spinner mb-2"></div>
+              <span class="text-[10px] font-bold text-slate-500 uppercase tracking-widest">Loading...</span>
+            </div>
+            <img src="images/cars/thar.webp" 
+                 alt="Mahindra Thar 2026 - popular self-drive SUV in Koramangala" 
+                 class="car-card-img" 
+                 id="img-pop-2" 
+                 loading="lazy" 
+                 decoding="async" 
+                 onload="this.classList.add('img-loaded'); document.getElementById('loader-pop-2')?.classList.add('is-loaded');" 
+                 onerror="this.onerror=null;this.src='images/placeholder.svg';this.classList.add('img-loaded');document.getElementById('loader-pop-2')?.classList.add('is-loaded');">
+            <span class="absolute top-3 left-3 bg-sky-500 text-white text-xs font-bold px-3 py-1.5 rounded-full shadow-lg z-20">Popular</span>
           </div>
           <div class="mt-4">
             <div class="flex items-start justify-between gap-3">
@@ -1858,9 +1946,20 @@
         </div>
 
         <div class="card-base group overflow-hidden reveal-element" data-animate="left" data-animate-delay="3">
-          <div class="relative rounded-xl overflow-hidden border border-slate-200">
-            <img src="images/cars/Ertiga.webp" alt="Maruti Ertiga VXI 2025 - popular 7-seater self-drive car in Koramangala" class="w-full aspect-[4/3] object-cover group-hover:scale-[1.03] transition-transform duration-300" loading="lazy" decoding="async" onerror="this.src='images/placeholder.svg'">
-            <span class="absolute top-3 left-3 bg-purple-500 text-white text-xs font-bold px-3 py-1.5 rounded-full shadow-lg">Family Pick</span>
+          <div class="car-img-wrapper relative rounded-xl overflow-hidden border border-slate-200 aspect-[4/3]">
+            <div class="car-skeleton-loader" id="loader-pop-3">
+              <div class="car-skeleton-spinner mb-2"></div>
+              <span class="text-[10px] font-bold text-slate-500 uppercase tracking-widest">Loading...</span>
+            </div>
+            <img src="images/cars/Ertiga.webp" 
+                 alt="Maruti Ertiga VXI 2025 - popular 7-seater self-drive car in Koramangala" 
+                 class="car-card-img" 
+                 id="img-pop-3" 
+                 loading="lazy" 
+                 decoding="async" 
+                 onload="this.classList.add('img-loaded'); document.getElementById('loader-pop-3')?.classList.add('is-loaded');" 
+                 onerror="this.onerror=null;this.src='images/placeholder.svg';this.classList.add('img-loaded');document.getElementById('loader-pop-3')?.classList.add('is-loaded');">
+            <span class="absolute top-3 left-3 bg-purple-500 text-white text-xs font-bold px-3 py-1.5 rounded-full shadow-lg z-20">Family Pick</span>
           </div>
           <div class="mt-4">
             <div class="flex items-start justify-between gap-3">
@@ -2469,6 +2568,7 @@
             if (!src) return;
             modalImg.src = src;
             modalImg.alt = alt;
+            modalImg.onerror = function() { this.src = 'images/placeholder.svg'; };
             modal.classList.remove('hidden');
           });
         });
@@ -2620,6 +2720,16 @@
       setTimeout(() => {
         if (window.scrollY > 50) showStickyBar();
       }, 1000);
+
+      // Trigger load for cached popular car images
+      document.querySelectorAll('.car-card-img').forEach((img) => {
+        if (img.complete && img.naturalHeight !== 0) {
+          img.classList.add('img-loaded');
+          const id = img.id.replace('img-', '');
+          const loader = document.getElementById(`loader-${id}`);
+          if (loader) loader.classList.add('is-loaded');
+        }
+      });
     })();
   </script>
 
@@ -2635,7 +2745,7 @@
       <div class="mb-8">
         <div class="flex flex-col md:flex-row items-center md:items-start gap-6 text-left">
           <a href="index.html" class="flex items-center gap-3 mb-6 md:mb-0">
-            <img src="https://raw.githubusercontent.com/nbkbusinesssolutions/rkbrothers-assets/e233631ca892825d069623c2790b5ff19e63b125/Rk%20Brothers%20Cars%20Rental%20Logo.jpg" alt="RK Brothers Cars Rental logo" class="h-10 w-auto rounded-lg flex-shrink-0">
+            <img src="https://raw.githubusercontent.com/nbkbusinesssolutions/rkbrothers-assets/e233631ca892825d069623c2790b5ff19e63b125/Rk%20Brothers%20Cars%20Rental%20Logo.jpg" alt="RK Brothers Cars Rental logo" class="h-10 w-auto rounded-lg flex-shrink-0" onerror="this.onerror=null;this.src='images/logo.jpg'">
             <div>
               <h3 class="font-display text-xl font-bold text-white">RK Brothers</h3>
               <p class="text-xs text-slate-400">Cars Rental</p>
