@@ -96,9 +96,9 @@
       "whatsappMsg": "I'm interested in booking the Maruti Swift 2025"
     },
     {
-      "id": "tiago-2018",
+      "id": "tiago-2025",
       "name": "Tata Tiago",
-      "model": "2018",
+      "model": "2025",
       "price": 3000,
       "priceFormatted": "₹3,000",
       "kmAllowance": 350,
@@ -110,9 +110,9 @@
       "caption": "Budget-friendly, safe, and economical with dual fuel flexibility.",
       "img": {
         "card": "images/cars/Tiago.webp",
-        "alt": "Tata Tiago 2018 - 5 seat hatchback Petrol + CNG"
+        "alt": "Tata Tiago 2025 - 5 seat hatchback Petrol + CNG"
       },
-      "whatsappMsg": "I'm interested in booking the Tata Tiago 2018"
+      "whatsappMsg": "I'm interested in booking the Tata Tiago 2025"
     },
     {
       "id": "kwid-2020",
